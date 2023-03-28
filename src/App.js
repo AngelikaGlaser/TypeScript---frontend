@@ -47,8 +47,8 @@ function App() {
                     <td style={{position: "absolute", left: "30px"}}>{chosenCountry}</td>
                     {prices.map(data =>
                         <tr key={data.timestamp}>
-                            <td style={{border: "1px solid #ddd", padding: "8px"}}>{new Date(data.timestamp * 1000).toISOString()}</td>
-                            <td style={{border: "1px solid #ddd", padding: "8px"}}>{data.price}</td>
+                            <td style={{border: "1px solid #ddd", padding: "8px"}}>{new Date(data.timestamp * 1000).toISOString().split("T").join(" ").split("Z")[0].split(".")[0]}</td>
+                            <td>{data.price}<span style={{float: "right"}}>&euro;</span></td>
                         </tr>)}
                     </tbody>
                 </table>}
